@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['c_5fattestation_5ftag_3709',['C_ATTESTATION_TAG',['../k__sal__crypto_8c.html#a06b96ec23a3a52b3114f785405c10288',1,'k_sal_crypto.c']]],
+  ['c_5fbirth_5fcert_5ftag_3710',['C_BIRTH_CERT_TAG',['../k__sal__crypto_8c.html#a5fdcf43ac0411f86bc8ab92abafb5cb8',1,'k_sal_crypto.c']]],
+  ['c_5fk_5fkta_5fl1_5fkey_5fmaterial_5fdata_5fid_5flength_3711',['C_K_KTA_L1_KEY_MATERIAL_DATA_ID_LENGTH',['../k__sal__storage_8c.html#a70d1b4a993471bef8f0b50342033939a',1,'k_sal_storage.c']]],
+  ['c_5fk_5fkta_5flife_5fcycle_5fstate_5fstorage_5fid_5flength_3712',['C_K_KTA_LIFE_CYCLE_STATE_STORAGE_ID_LENGTH',['../k__sal__storage_8c.html#ac90141b996b31fddccadc87516287792',1,'k_sal_storage.c']]],
+  ['c_5fk_5fkta_5frot_5fpublic_5fuid_5fstorage_5fid_5flength_3713',['C_K_KTA_ROT_PUBLIC_UID_STORAGE_ID_LENGTH',['../k__sal__storage_8c.html#a08749196aa448d170a8ca64e133bce61',1,'k_sal_storage.c']]],
+  ['c_5fk_5fkta_5fsealed_5fdata_5fstorage_5fid_5flength_3714',['C_K_KTA_SEALED_DATA_STORAGE_ID_LENGTH',['../k__sal__storage_8c.html#a3a82c46b629b5a4006030d0928e70f0a',1,'k_sal_storage.c']]],
+  ['c_5fmax_5fact_5fmac_5flength_3715',['C_MAX_ACT_MAC_LENGTH',['../k__sal__crypto_8c.html#acba5edd1c267f8b2d5c4c562bab74ab4',1,'k_sal_crypto.c']]],
+  ['c_5fmax_5fpsa_5fkey_5fbits_3716',['C_MAX_PSA_KEY_BITS',['../k__sal__crypto_8c.html#a705d3a8b6d4ca671fbf4dde38235529f',1,'k_sal_crypto.c']]],
+  ['c_5fmax_5fsecret_5fsize_3717',['C_MAX_SECRET_SIZE',['../k__sal__crypto_8c.html#af98aa08f920cc6df823f27dcd6b535f5',1,'k_sal_crypto.c']]],
+  ['c_5fmax_5fsig_5fmsg_5fsize_3718',['C_MAX_SIG_MSG_SIZE',['../k__sal__crypto_8c.html#a5fca7040b338f2708c6eaa5cb7f73a4b',1,'k_sal_crypto.c']]],
+  ['c_5fpsa_5fkey_5fbits_3719',['C_PSA_KEY_BITS',['../k__sal__crypto_8c.html#a86bfe7dfb76f32a35ab6f7b7b5c69361',1,'k_sal_crypto.c']]],
+  ['c_5fpsa_5fl1_5fkey_5fmaterial_5fdata_5fkey_5fid_3720',['C_PSA_L1_KEY_MATERIAL_DATA_KEY_ID',['../k__sal__storage_8c.html#a51d543c7a6ea736ac4a8c73d2e74e92a',1,'k_sal_storage.c']]],
+  ['c_5fpsa_5flife_5fcycle_5fstate_5fkey_5fid_3721',['C_PSA_LIFE_CYCLE_STATE_KEY_ID',['../k__sal__storage_8c.html#a1caaa39d79c25392840c3311e1868f53',1,'k_sal_storage.c']]],
+  ['c_5fpsa_5frot_5fpublic_5fuid_5fkey_5fid_3722',['C_PSA_ROT_PUBLIC_UID_KEY_ID',['../k__sal__storage_8c.html#a0a9c64ddb5064ead74de34990a0c06e8',1,'k_sal_storage.c']]],
+  ['c_5fpsa_5fsealed_5fdata_5fkey_5fid_3723',['C_PSA_SEALED_DATA_KEY_ID',['../k__sal__storage_8c.html#ad4cb14689c146e4c359d0ed992a1a757',1,'k_sal_storage.c']]],
+  ['c_5fsal_5fcrypto_5fattest_5fcert_5fmax_5flength_3724',['C_SAL_CRYPTO_ATTEST_CERT_MAX_LENGTH',['../k__sal__crypto_8c.html#a943de6c7edcf1dbf60fc78cb08a52616',1,'k_sal_crypto.c']]],
+  ['c_5fsal_5fcrypto_5fmax_5fkey_5flength_3725',['C_SAL_CRYPTO_MAX_KEY_LENGTH',['../k__sal__crypto_8c.html#a45463658005ccecbe8f5dbacbb52f230',1,'k_sal_crypto.c']]],
+  ['c_5fsal_5fcrypto_5fother_5fdata_5fsize_3726',['C_SAL_CRYPTO_OTHER_DATA_SIZE',['../k__sal__crypto_8c.html#ab24075c59629f00db9b835b354f5bdba',1,'k_sal_crypto.c']]],
+  ['c_5fsal_5fcrypto_5fpsa_5fl1_5ffield_5fkey_5fid_3727',['C_SAL_CRYPTO_PSA_L1_FIELD_KEY_ID',['../k__sal__crypto_8c.html#a07b0114cee8334ac9e1cb8504e829742',1,'k_sal_crypto.c']]],
+  ['c_5fsal_5fcrypto_5fpsa_5fpublic_5fkey_5fmax_5fsize_3728',['C_SAL_CRYPTO_PSA_PUBLIC_KEY_MAX_SIZE',['../k__sal__crypto_8c.html#ad158bb6e1d51efdb0d18583934b9742b',1,'k_sal_crypto.c']]],
+  ['c_5fsal_5fcrypto_5fpublic_5fkey_5fsize_3729',['C_SAL_CRYPTO_PUBLIC_KEY_SIZE',['../k__sal__crypto_8c.html#a38c8ed5f4a00319e0070a27405cd4fed',1,'k_sal_crypto.c']]],
+  ['c_5fsal_5fcrypto_5fshared_5fsecret_5fbitmask_3730',['C_SAL_CRYPTO_SHARED_SECRET_BITMASK',['../k__sal__crypto_8c.html#a7d66935dfbd7e3f20d8ad5228af10c49',1,'k_sal_crypto.c']]],
+  ['c_5fsal_5fcrypto_5fx509_5fcert_5fid_3731',['C_SAL_CRYPTO_X509_CERT_ID',['../k__sal__crypto_8c.html#a1b6c74b08665c672389980f81e230697',1,'k_sal_crypto.c']]],
+  ['c_5fsal_5fdevice_5fuid_5fsize_3732',['C_SAL_DEVICE_UID_SIZE',['../k__sal__rot_8c.html#a448b80ce5376c857f56983a12829480d',1,'k_sal_rot.c']]],
+  ['c_5fshared_5fsecret_5fkey_5flen_3733',['C_SHARED_SECRET_KEY_LEN',['../k__sal__crypto_8c.html#a442bdba060d40a0e6c19466533a53c42',1,'k_sal_crypto.c']]]
+];

@@ -1,0 +1,37 @@
+var k__sal__crypto_8c =
+[
+    [ "TKSalObjectIdMap", "struct_t_k_sal_object_id_map.html", "struct_t_k_sal_object_id_map" ],
+    [ "C_ATTESTATION_TAG", "k__sal__crypto_8c.html#a06b96ec23a3a52b3114f785405c10288", null ],
+    [ "C_BIRTH_CERT_TAG", "k__sal__crypto_8c.html#a5fdcf43ac0411f86bc8ab92abafb5cb8", null ],
+    [ "C_MAX_ACT_MAC_LENGTH", "k__sal__crypto_8c.html#acba5edd1c267f8b2d5c4c562bab74ab4", null ],
+    [ "C_MAX_PSA_KEY_BITS", "k__sal__crypto_8c.html#a705d3a8b6d4ca671fbf4dde38235529f", null ],
+    [ "C_MAX_SECRET_SIZE", "k__sal__crypto_8c.html#af98aa08f920cc6df823f27dcd6b535f5", null ],
+    [ "C_MAX_SIG_MSG_SIZE", "k__sal__crypto_8c.html#a5fca7040b338f2708c6eaa5cb7f73a4b", null ],
+    [ "C_PSA_KEY_BITS", "k__sal__crypto_8c.html#a86bfe7dfb76f32a35ab6f7b7b5c69361", null ],
+    [ "C_SAL_CRYPTO_ATTEST_CERT_MAX_LENGTH", "k__sal__crypto_8c.html#a943de6c7edcf1dbf60fc78cb08a52616", null ],
+    [ "C_SAL_CRYPTO_MAX_KEY_LENGTH", "k__sal__crypto_8c.html#a45463658005ccecbe8f5dbacbb52f230", null ],
+    [ "C_SAL_CRYPTO_OTHER_DATA_SIZE", "k__sal__crypto_8c.html#ab24075c59629f00db9b835b354f5bdba", null ],
+    [ "C_SAL_CRYPTO_PSA_L1_FIELD_KEY_ID", "k__sal__crypto_8c.html#a07b0114cee8334ac9e1cb8504e829742", null ],
+    [ "C_SAL_CRYPTO_PSA_PUBLIC_KEY_MAX_SIZE", "k__sal__crypto_8c.html#ad158bb6e1d51efdb0d18583934b9742b", null ],
+    [ "C_SAL_CRYPTO_PUBLIC_KEY_SIZE", "k__sal__crypto_8c.html#a38c8ed5f4a00319e0070a27405cd4fed", null ],
+    [ "C_SAL_CRYPTO_SHARED_SECRET_BITMASK", "k__sal__crypto_8c.html#a7d66935dfbd7e3f20d8ad5228af10c49", null ],
+    [ "C_SAL_CRYPTO_X509_CERT_ID", "k__sal__crypto_8c.html#a1b6c74b08665c672389980f81e230697", null ],
+    [ "C_SHARED_SECRET_KEY_LEN", "k__sal__crypto_8c.html#a442bdba060d40a0e6c19466533a53c42", null ],
+    [ "M_SAL_CRYPTO_GET_BIT31", "k__sal__crypto_8c.html#ad2387093611f3b0654937bf20ad586b7", null ],
+    [ "TKCipherOps", "k__sal__crypto_8c.html#a9bd19144912434ddd9291e227ed4f579", [
+      [ "E_K_SAL_ENCRYPT", "k__sal__crypto_8c.html#a9bd19144912434ddd9291e227ed4f579ad4cde8c54e78938216e7737381ed7b77", null ],
+      [ "E_K_SAL_DECRYPT", "k__sal__crypto_8c.html#a9bd19144912434ddd9291e227ed4f579addc3a6d8fa428e9f4a35c845696a84f2", null ],
+      [ "E_K_INVALID_OPS", "k__sal__crypto_8c.html#a9bd19144912434ddd9291e227ed4f579a8744249fa4d678e80c74befa8018c757", null ]
+    ] ],
+    [ "salCryptoAesDec", "group__g__sal__api.html#ga57735f423b4204965082737daa7c995f", null ],
+    [ "salCryptoAesEnc", "group__g__sal__api.html#gac7dbb57319c48d6491deb390402fabfc", null ],
+    [ "salCryptoGetRandom", "group__g__sal__api.html#ga1327e3f7a16d4cac95a162c4d22b4087", null ],
+    [ "salCryptoHmac", "group__g__sal__api.html#gad7b9434208340145e6559c128e57ba14", null ],
+    [ "salCryptoHmacVerify", "group__g__sal__api.html#gacd76519ca9d3be1fd06c8d364b8d0138", null ],
+    [ "salRotGetChipCertificate", "group__g__sal__api.html#gaa5b2b8b22be1e7a58bf2308f11e0a7ed", null ],
+    [ "salRotHkdfExtractAndExpand", "group__g__sal__api.html#gadb1732cf58e67139edcaa19d633f45fc", null ],
+    [ "salRotKeyAgreement", "group__g__sal__api.html#gae275cf7b6743c03238d60049122a13d8", null ],
+    [ "salRotKeyDerivation", "group__g__sal__api.html#gae1067c6bfe0401e5a27daef89f8a5a74", null ],
+    [ "salRotKeyPairGeneration", "group__g__sal__api.html#ga484bae392d0868f5a290f79531fc2e9c", null ],
+    [ "salSignHash", "group__g__sal__api.html#ga29aa2382e87f2767c2465e9f5338d14d", null ]
+];

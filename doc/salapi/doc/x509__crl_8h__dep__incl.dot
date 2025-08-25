@@ -1,0 +1,11 @@
+digraph "x509_crl.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="x509_crl.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="X.509 certificate revocation list parsing."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="x509_crt.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$x509__crt_8h.html",tooltip="X.509 certificate parsing and writing."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="pkcs7.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pkcs7_8h.html",tooltip="PKCS #7 generic defines and structures https://tools.ietf.org/html/rfc2315."];
+}

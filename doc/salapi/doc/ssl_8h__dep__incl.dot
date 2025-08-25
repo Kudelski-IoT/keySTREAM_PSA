@@ -1,0 +1,17 @@
+digraph "ssl.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ssl.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="SSL/TLS functions."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="debug.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debug_8h.html",tooltip="Functions for controlling and providing debug output from the library."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="net_sockets.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$net__sockets_8h.html",tooltip="Network sockets abstraction layer to integrate Mbed TLS into a BSD-style sockets API."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ssl_cache.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ssl__cache_8h.html",tooltip="SSL session cache implementation."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="ssl_cookie.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ssl__cookie_8h.html",tooltip="DTLS cookie callbacks implementation."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ssl_ticket.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ssl__ticket_8h.html",tooltip="TLS server ticket callbacks implementation."];
+}

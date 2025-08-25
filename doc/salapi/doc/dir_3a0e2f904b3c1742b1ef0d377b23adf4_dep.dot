@@ -1,0 +1,13 @@
+digraph "mbedtls" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_387ca30099ce5e33d3223324d6ac0923 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="include" fontname="Helvetica", fontsize="10", URL="dir_387ca30099ce5e33d3223324d6ac0923.html"]
+  subgraph clusterdir_3a0e2f904b3c1742b1ef0d377b23adf4 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_3a0e2f904b3c1742b1ef0d377b23adf4.html"];
+    dir_3a0e2f904b3c1742b1ef0d377b23adf4 [shape=plaintext label="mbedtls"];
+    dir_83321844a67635f8150b8bd739c52b53 [shape=box label="include" color="red" fillcolor="white" style="filled" URL="dir_83321844a67635f8150b8bd739c52b53.html"];
+  }
+  }
+}

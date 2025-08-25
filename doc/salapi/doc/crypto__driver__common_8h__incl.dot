@@ -1,0 +1,44 @@
+digraph "crypto_driver_common.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="crypto_driver_common.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Definitions for all PSA crypto drivers."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="stddef.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="stdint.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="crypto_types.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto__types_8h.html",tooltip="PSA cryptography module: type aliases."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="psa/build_info.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$psa_2build__info_8h.html",tooltip="Build-time PSA configuration info."];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="mbedtls/build_info.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mbedtls_2build__info_8h.html",tooltip="Build-time configuration info."];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="mbedtls/mbedtls_config.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mbedtls__config_8h.html",tooltip="Configuration options (set of defines)"];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="mbedtls/config_adjust\l_legacy_crypto.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$config__adjust__legacy__crypto_8h.html",tooltip="Adjust legacy configuration configuration."];
+  Node6 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="mbedtls/config_adjust\l_x509.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$config__adjust__x509_8h.html",tooltip="Adjust X.509 configuration."];
+  Node6 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="mbedtls/config_adjust\l_ssl.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$config__adjust__ssl_8h.html",tooltip="Adjust TLS configuration."];
+  Node6 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="mbedtls/check_config.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$check__config_8h.html",tooltip="Consistency checks for configuration options."];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="limits.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node11 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="mbedtls/private_access.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$private__access_8h.html",tooltip="Macro wrapper for struct's members."];
+  Node4 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="crypto_platform.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto__platform_8h.html",tooltip="PSA cryptography module: Mbed TLS platform definitions."];
+  Node14 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="crypto_values.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto__values_8h.html",tooltip="PSA cryptography module: macros to build and analyze integer values."];
+  Node15 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="psa/crypto_sizes.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto__sizes_8h.html",tooltip="PSA cryptography module: Mbed TLS buffer size macros."];
+  Node16 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

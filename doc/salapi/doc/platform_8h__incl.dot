@@ -1,0 +1,29 @@
+digraph "platform.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="platform.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This file contains the definitions and functions of the Mbed TLS platform abstraction layer."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="mbedtls/private_access.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$private__access_8h.html",tooltip="Macro wrapper for struct's members."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="mbedtls/build_info.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mbedtls_2build__info_8h.html",tooltip="Build-time configuration info."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="mbedtls/mbedtls_config.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mbedtls__config_8h.html",tooltip="Configuration options (set of defines)"];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="mbedtls/config_adjust\l_legacy_crypto.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$config__adjust__legacy__crypto_8h.html",tooltip="Adjust legacy configuration configuration."];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="mbedtls/config_adjust\l_x509.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$config__adjust__x509_8h.html",tooltip="Adjust X.509 configuration."];
+  Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="mbedtls/config_adjust\l_ssl.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$config__adjust__ssl_8h.html",tooltip="Adjust TLS configuration."];
+  Node3 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="mbedtls/check_config.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$check__config_8h.html",tooltip="Consistency checks for configuration options."];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="limits.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="stdint.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="stdio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="stdlib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

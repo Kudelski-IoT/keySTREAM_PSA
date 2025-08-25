@@ -1,0 +1,21 @@
+digraph "config_psa.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="config_psa.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="PSA crypto configuration options (set of defines)"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="psa/crypto_legacy.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto__legacy_8h.html",tooltip="Add temporary suppport for deprecated symbols before they are removed from the library."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="psa/crypto_adjust_config\l_synonyms.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto__adjust__config__synonyms_8h.html",tooltip="Adjust PSA configuration: enable quasi-synonyms."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="psa/crypto_adjust_config\l_dependencies.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto__adjust__config__dependencies_8h.html",tooltip="Adjust PSA configuration by resolving some dependencies."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="mbedtls/config_adjust\l_psa_superset_legacy.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$config__adjust__psa__superset__legacy_8h.html",tooltip="Adjust PSA configuration: automatic enablement from legacy."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="mbedtls/config_adjust\l_psa_from_legacy.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$config__adjust__psa__from__legacy_8h.html",tooltip="Adjust PSA configuration: construct PSA configuration from legacy."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="psa/crypto_adjust_config\l_key_pair_types.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto__adjust__config__key__pair__types_8h.html",tooltip="Adjust PSA configuration for key pair types."];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="psa/crypto_adjust_auto\l_enabled.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$crypto__adjust__auto__enabled_8h.html",tooltip="Adjust PSA configuration: enable always-on features."];
+}

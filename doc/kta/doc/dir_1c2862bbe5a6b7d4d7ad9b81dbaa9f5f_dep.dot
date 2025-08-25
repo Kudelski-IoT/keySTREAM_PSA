@@ -1,0 +1,14 @@
+digraph "fota_service" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_7e2560d9caf2b698f36b0974bab08bcc {
+    graph [ bgcolor="#ddddee", pencolor="black", label="modules" fontname="Helvetica", fontsize="10", URL="dir_7e2560d9caf2b698f36b0974bab08bcc.html"]
+  subgraph clusterdir_1c2862bbe5a6b7d4d7ad9b81dbaa9f5f {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_1c2862bbe5a6b7d4d7ad9b81dbaa9f5f.html"];
+    dir_1c2862bbe5a6b7d4d7ad9b81dbaa9f5f [shape=plaintext label="fota_service"];
+    dir_de88bbd1a850812da64d58f8e8804fd1 [shape=box label="include" color="black" fillcolor="white" style="filled" URL="dir_de88bbd1a850812da64d58f8e8804fd1.html"];
+  }
+  }
+  dir_1c2862bbe5a6b7d4d7ad9b81dbaa9f5f->dir_de88bbd1a850812da64d58f8e8804fd1 [headlabel="6", labeldistance=1.5 headhref="dir_000010_000011.html"];
+}
