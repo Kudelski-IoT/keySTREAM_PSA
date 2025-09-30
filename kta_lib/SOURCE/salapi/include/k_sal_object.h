@@ -99,18 +99,6 @@ enum
    */
   E_K_SAL_OBJECT_TYPE_SEALED_DATA = 3,
   /**
-   * Object Type Managed Slot 14
-   */
-  E_K_SAL_OBJECT_TYPE_MANAGED_SLOT_14 = 14u,
-    /**
-   * Object Type Managed Slot 5
-   */
-  E_K_SAL_OBJECT_TYPE_MANAGED_SLOT_5 = 5u,
-  /**
-   * Object Type Managed Slot 8
-   */
-  E_K_SAL_OBJECT_TYPE_MANAGED_SLOT_8 = 8u,
-  /**
    * Object type max num.
    */
   E_K_SAL_OBJECT_TYPE_MAX_NUM = 20
