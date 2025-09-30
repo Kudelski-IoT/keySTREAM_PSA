@@ -85,19 +85,19 @@ enum
   /**
    * Object type data.
    */
-  E_K_SAL_OBJECT_TYPE_DATA,
+  E_K_SAL_OBJECT_TYPE_DATA = 0,
   /**
    * Object type rfu.
    */
-  E_K_SAL_OBJECT_TYPE_RFU_V2,
+  E_K_SAL_OBJECT_TYPE_RFU_V2 = 1,
   /**
    * Object type cert.
    */
-  E_K_SAL_OBJECT_TYPE_CERTFICATE,
+  E_K_SAL_OBJECT_TYPE_CERTFICATE = 2,
   /**
    * Object type sealed data.
    */
-  E_K_SAL_OBJECT_TYPE_SEALED_DATA,
+  E_K_SAL_OBJECT_TYPE_SEALED_DATA = 3,
   /**
    * Object Type Managed Slot 14
    */
@@ -111,17 +111,9 @@ enum
    */
   E_K_SAL_OBJECT_TYPE_MANAGED_SLOT_8 = 8u,
   /**
-   * Object Type Managed Slot 14 block 0
-   */
-  E_K_SAL_OBJECT_MANAGED_SLOT_14_BLOCK_0 = 0u,
-  /**
-   * Object Type Managed Slot 14 block 1
-   */
-  E_K_SAL_OBJECT_MANAGED_SLOT_14_BLOCK_1 = 1u,
-  /**
    * Object type max num.
    */
-  E_K_SAL_OBJECT_TYPE_MAX_NUM
+  E_K_SAL_OBJECT_TYPE_MAX_NUM = 20
 };
 
 typedef uint32_t TKSalObjectType;
