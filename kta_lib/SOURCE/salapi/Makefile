@@ -8,7 +8,7 @@ CFLAGS += -DMBEDTLS_PSA_CRYPTO_BUILTIN_KEYS
 
 LIB :=libsal.a
 
-INC += -I ../../include -I ../../../COMMON/logmodule/include -I ../include -I include -I extra_includes -I include/mbedtls/include
+INC += -I ../../include -I ./../../COMMON/include -I ../include -I include -I extra_includes -I include/mbedtls/include
 
 SRCS := \
 	k_sal_crypto.c \

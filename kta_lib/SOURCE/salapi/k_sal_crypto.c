@@ -57,6 +57,7 @@
 /* -------------------------------------------------------------------------- */
 /* LOCAL CONSTANTS, TYPES, ENUM                                               */
 /* -------------------------------------------------------------------------- */
+#define KEY_DUMP 1
 
 /** @brief L1 field key id. */
 #define C_SAL_CRYPTO_PSA_L1_FIELD_KEY_ID        (0x01000100u)
@@ -270,6 +271,18 @@ static void lConvertToBigEndien
   size_t    xChipUidLen
 );
 
+#ifdef KEY_DUMP
+/**
+ * @implements lPrintKey
+ *
+ **/
+static void lPrintKey
+(
+  psa_key_id_t  xKeyId,
+  size_t    data_size
+);
+#endif // KEY_DUMP
+
 /* -------------------------------------------------------------------------- */
 /* PUBLIC VARIABLES                                                           */
 /* -------------------------------------------------------------------------- */
@@ -424,9 +437,9 @@ K_SAL_API TKStatus salRotGetChipCertificate
 #endif
 
   // Add birth cert tag
-  xpChipCert[3U + tokenSize + 0U] = C_BIRTH_CERT_TAG;
-  xpChipCert[3U + tokenSize + 1U] = certParams.dataLen >> 8;
-  xpChipCert[3U + tokenSize + 2U] = certParams.dataLen;
+  xpChipCert[3U + sizeOut + 0U] = C_BIRTH_CERT_TAG;
+  xpChipCert[3U + sizeOut + 1U] = certParams.dataLen >> 8;
+  xpChipCert[3U + sizeOut + 2U] = certParams.dataLen;
 
     *xpChipCertLen = (3U + sizeOut + 3U + certParams.dataLen);
 
@@ -668,6 +681,11 @@ K_SAL_API TKStatus salRotHkdfExtractAndExpand
       (void)memcpy(aSalt, xpSalt, C_MAX_SIG_MSG_SIZE);
       saltLen = C_MAX_SIG_MSG_SIZE;
       secLen = 32;
+#ifdef KEY_DUMP
+      M_KTALOG__HEX("ACT_MODE gaSharedSecret", gaSharedSecret, 32);
+      M_KTALOG__HEX("ACT_MODE xpSalt", xpSalt, C_MAX_SIG_MSG_SIZE);
+      M_KTALOG__HEX("ACT_MODE xpSalt", xpInfo, xInfoLen);
+#endif
     }
     else
     {
@@ -675,6 +693,11 @@ K_SAL_API TKStatus salRotHkdfExtractAndExpand
       (void)memcpy(aSalt, xpSalt, C_MAX_SECRET_SIZE);
       saltLen = C_MAX_SECRET_SIZE;
       secLen = C_MAX_SIG_MSG_SIZE;
+#ifdef KEY_DUMP
+      M_KTALOG__HEX("GEN_MODE gaSharedSecret", xpSecret, C_MAX_SIG_MSG_SIZE);
+      M_KTALOG__HEX("GEN_MODE xpSalt", xpSalt, C_MAX_SECRET_SIZE);
+      M_KTALOG__HEX("GEN_MODE xpSalt", xpInfo, xInfoLen);
+#endif
       gPsaStatus = psa_get_key_attributes(C_SAL_CRYPTO_PSA_L1_FIELD_KEY_ID, &outputKeyAttr);
 
       if (gPsaStatus == PSA_SUCCESS)
@@ -747,6 +770,10 @@ K_SAL_API TKStatus salRotHkdfExtractAndExpand
         break;
       }
 
+#ifdef KEY_DUMP
+      M_KTALOG__DEBUG("L1 ACT key");
+      lPrintKey(l1ActKey, 32);
+#endif      
       if (lSetValueById(C_K_KTA__VOLATILE_2_ID,
                         (uint8_t*)&l1ActKey,
                         sizeof(l1ActKey)) != E_K_STATUS_OK)
@@ -774,6 +801,10 @@ K_SAL_API TKStatus salRotHkdfExtractAndExpand
       {
         break;
       }
+#ifdef KEY_DUMP
+      M_KTALOG__DEBUG("L1 field key");
+      lPrintKey(l1ActKey, 32);
+#endif
     }
 
     /* Free the key derivation operation object. */
@@ -866,7 +897,10 @@ K_SAL_API TKStatus salRotKeyDerivation
       M_KTALOG__ERR("psa_mac_comput failed[%d]", gPsaStatus);
       break;
     }
-
+#ifdef KEY_DUMP
+    M_KTALOG__HEX("xpInputData", xpInputData, xInputDataLen);
+    M_KTALOG__HEX("L2 key", aActMac32, actMac32Len);
+#endif
     /* Translate derived_key_id and setup key attributes for the context:. */
     if (xDerivedKeyId == C_K_KTA__VOLATILE_2_ID)
     {
@@ -961,6 +995,10 @@ K_SAL_API TKStatus salCryptoHmac
     }
 
     psa_crypto_init();
+#ifdef KEY_DUMP
+    M_KTALOG__DEBUG("salCryptoHmac L2 key");
+    lPrintKey(keyId, 16);
+#endif
     gPsaStatus = psa_mac_compute(keyId, PSA_ALG_HMAC(PSA_ALG_SHA_256),
                                  xpInputData, xInputDataLen,
                                  aMac, macLength, &macLength);
@@ -1023,6 +1061,11 @@ K_SAL_API TKStatus salCryptoHmacVerify
     }
 
     psa_crypto_init();
+#ifdef KEY_DUMP
+    M_KTALOG__DEBUG("salCryptoHmacVerify L2 key");
+    lPrintKey(keyId, 16);
+#endif
+
     gPsaStatus = psa_mac_compute(keyId, PSA_ALG_HMAC(PSA_ALG_SHA_256),
                                  xpInputData, xInputDataLen,
                                  aMac, macLength, &macLength);
@@ -1325,6 +1368,10 @@ static TKStatus lDoCipherOps
     }
 
     psa_crypto_init();
+#ifdef KEY_DUMP
+    M_KTALOG__DEBUG("psa_cipher ENC key");
+    lPrintKey(keyId, 16);
+#endif
 
     if (xOps == E_K_SAL_ENCRYPT)
     {
@@ -1443,6 +1490,38 @@ static void lConvertToBigEndien
     endPos--;
   }
 }
+
+#ifdef KEY_DUMP
+/**
+ * @implements lPrintKey
+ *
+ **/
+static void lPrintKey
+(
+  psa_key_id_t  xKeyId,
+  size_t    data_size
+)
+{
+
+  uint8_t data[32];
+  size_t data_length = 32;
+  for(;;)
+  {
+    gPsaStatus = psa_export_key(xKeyId,
+                            data,
+                            data_size,
+                            &data_length);
+                            
+    if (PSA_SUCCESS != gPsaStatus)
+    {
+      M_KTALOG__ERR("psa_cipher_finish failed[%d]", gPsaStatus);
+      break;
+    }
+    M_KTALOG__HEX("Key", data, data_length);
+    break;
+  }
+}
+#endif // KEY_DUMP
 /* -------------------------------------------------------------------------- */
 /* END OF FILE                                                                */
 /* -------------------------------------------------------------------------- */
