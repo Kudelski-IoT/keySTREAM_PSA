@@ -753,18 +753,15 @@ static TKStatus lParseChipCert
   uint32_t length = 0;
   uint32_t index  = 0;
 
-  /* To fix the misra-c-2012-13.3-A full expression containing an increment (++) or decrement (--) operator should have no other potential side effects other than that caused by the increment or decrement operator */
-  uint32_t ui32FieldLen  = *xpFieldPos;
-
   for (;;)
   {
-    xpProtoMessage->commands[xCommandPos].data.fieldList.fields[ui32FieldLen].fieldTag =
+    xpProtoMessage->commands[xCommandPos].data.fieldList.fields[++*xpFieldPos].fieldTag =
       xpActPayload->aChipCert[index];
-    xpProtoMessage->commands[xCommandPos].data.fieldList.fields[ui32FieldLen].fieldLen =
+    xpProtoMessage->commands[xCommandPos].data.fieldList.fields[*xpFieldPos].fieldLen =
       ((size_t)((xpActPayload->aChipCert[index + 1u]) << 8u) | xpActPayload->aChipCert[index + 2u]);
-    length = xpProtoMessage->commands[xCommandPos].data.fieldList.fields[ui32FieldLen].fieldLen;
+    length = xpProtoMessage->commands[xCommandPos].data.fieldList.fields[*xpFieldPos].fieldLen;
     index = index + 3u;
-    xpProtoMessage->commands[xCommandPos].data.fieldList.fields[ui32FieldLen].fieldValue =
+    xpProtoMessage->commands[xCommandPos].data.fieldList.fields[*xpFieldPos].fieldValue =
       xpActPayload->aChipCert + index;
     index += length;
 
@@ -821,9 +818,9 @@ static TKStatus lPrepareActivationRequest
       xpActPayload->aChipUid;
   }
 
-#if defined (PLATFORM_PROCESS_FEATURE) || defined (OBJECT_MANAGEMENT_FEATURE)
   if (0u != xpActPayload->chipCertSize)
   {
+#ifdef PLATFORM_PROCESS_FEATURE
     ++fieldPos;
     xpProtoMessage->commands[currentPos].data.fieldList.fields[fieldPos].fieldTag =
       E_K_ICPP_PARSER_FLD_TAG_CHIP_CERT;
@@ -831,7 +828,8 @@ static TKStatus lPrepareActivationRequest
       xpActPayload->chipCertSize;
     xpProtoMessage->commands[currentPos].data.fieldList.fields[fieldPos].fieldValue =
       xpActPayload->aChipCert;
-
+#endif
+#ifdef OBJECT_MANAGEMENT_FEATURE
     /* Call tlv parser here and update fields. */
     status = lParseChipCert(xpProtoMessage, currentPos, xpActPayload, &fieldPos);
 
@@ -840,8 +838,9 @@ static TKStatus lPrepareActivationRequest
       M_KTALOG__ERR("Parsing of certificate tlv failed");
       goto end;
     }
+
+#endif
   }
-  #endif /* PLATFORM_PROCESS_FEATURE || OBJECT_MANAGEMENT_FEATURE */
 
   // REQ RQ_M-KTA-ACTV-FN-0045(1) :
   /* Convert the encrypted data into ICPP format raw buffer. */
