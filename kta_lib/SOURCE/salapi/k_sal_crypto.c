@@ -366,7 +366,9 @@ K_SAL_API TKStatus salRotGetChipCertificate
     }
     /* replace public key in temporary token don't copu offset 0 as it is just to indicate is is a publuc key*/
     memcpy(&aTokenBuffer[18], &aPublicKey[1], 64);
-
+#ifdef KEY_DUMP
+    M_KTALOG__HEX("psa_export_public_key:", &aPublicKey[1], C_K_KTA__PUBLIC_KEY_MAX_SIZE);
+#endif
     /* Update the session object handle in Volatile id. */
     if (lSetValueById(C_K_KTA__CHIP_SK_ID,
                       (uint8_t*)&psaChipKeyPairKeyId,
@@ -572,6 +574,9 @@ K_SAL_API TKStatus salRotKeyAgreement
     (void)memcpy(&aPeerKey[1], xpPeerPublicKey, C_K_KTA__PUBLIC_KEY_MAX_SIZE);
 
     psa_crypto_init();
+#ifdef KEY_DUMP
+    M_KTALOG__HEX("PublicKey", xpPeerPublicKey, C_K_KTA__PUBLIC_KEY_MAX_SIZE);
+#endif
     gPsaStatus = psa_raw_key_agreement(PSA_ALG_ECDH,
                                        keyId,
                                        aPeerKey,
@@ -585,7 +590,9 @@ K_SAL_API TKStatus salRotKeyAgreement
       M_KTALOG__ERR("psa_raw_key_agreement failed[%d]", gPsaStatus);
       break;
     }
-
+#ifdef KEY_DUMP
+    M_KTALOG__HEX("aSharedSecret", aSharedSecret, C_K_KTA__SHARED_SECRET_KEY_MAX_SIZE);
+#endif
     if (exposeSecret == 0u)
     {
       (void)memcpy(gaSharedSecret, aSharedSecret, C_K_KTA__SHARED_SECRET_KEY_MAX_SIZE);
@@ -684,7 +691,7 @@ K_SAL_API TKStatus salRotHkdfExtractAndExpand
 #ifdef KEY_DUMP
       M_KTALOG__HEX("ACT_MODE gaSharedSecret", gaSharedSecret, 32);
       M_KTALOG__HEX("ACT_MODE xpSalt", xpSalt, C_MAX_SIG_MSG_SIZE);
-      M_KTALOG__HEX("ACT_MODE xpSalt", xpInfo, xInfoLen);
+      M_KTALOG__HEX("ACT_MODE xpInfo", xpInfo, xInfoLen);
 #endif
     }
     else
@@ -696,7 +703,7 @@ K_SAL_API TKStatus salRotHkdfExtractAndExpand
 #ifdef KEY_DUMP
       M_KTALOG__HEX("GEN_MODE gaSharedSecret", xpSecret, C_MAX_SIG_MSG_SIZE);
       M_KTALOG__HEX("GEN_MODE xpSalt", xpSalt, C_MAX_SECRET_SIZE);
-      M_KTALOG__HEX("GEN_MODE xpSalt", xpInfo, xInfoLen);
+      M_KTALOG__HEX("GEN_MODE xpInfo", xpInfo, xInfoLen);
 #endif
       gPsaStatus = psa_get_key_attributes(C_SAL_CRYPTO_PSA_L1_FIELD_KEY_ID, &outputKeyAttr);
 
@@ -1514,7 +1521,7 @@ static void lPrintKey
                             
     if (PSA_SUCCESS != gPsaStatus)
     {
-      M_KTALOG__ERR("psa_cipher_finish failed[%d]", gPsaStatus);
+      M_KTALOG__ERR("psa_export_key failed[%d]", gPsaStatus);
       break;
     }
     M_KTALOG__HEX("Key", data, data_length);
